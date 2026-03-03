@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVQA Experiment</title>
+
+  <!--
+    index.html
+    Entry page for the jsPsych-based AVQA experiment platform.
+
+    Responsibilities:
+      - Load jsPsych core library and required plugins
+      - Load experiment content templates (experiment_content.js)
+      - Load shared utilities (utils.js)
+      - Load the main controller (main.js) which builds and runs the timeline
+
+    Notes:
+      - Script loading order matters:
+          jsPsych core -> jsPsych plugins -> custom plugin -> content -> utils -> main
+  -->
+
+  <!-- jsPsych core -->
+  <link href="jspsych/jspsych.css" rel="stylesheet" />
+  <script src="jspsych/jspsych.js"></script>
+
+  <!-- Official jsPsych plugins used in this template -->
+  <script src="jspsych/plugin-preload.js"></script>
+  <script src="jspsych/plugin-call-function.js"></script>
+  <script src="jspsych/plugin-html-button-response.js"></script>
+  <script src="jspsych/plugin-html-keyboard-response.js"></script>
+  <script src="jspsych/plugin-survey-html-form.js"></script>
+
+  <!-- Custom plugin: video playback + multiple rating sliders -->
+  <script src="jspsych/plugin-video-multislider-response.js"></script>
+
+  <!--
+    Basic UI styling for a centered, card-like layout.
+    Keep styles minimal here; component-level styles should live in plugin code when needed.
+  -->
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* jsPsych injects a #jspsych-content container by default */
+    #jspsych-content {
+      min-width: 720px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 2em;
+      background: #fff;
+      margin: 2em auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 80%;
+    }
+
+    ul, ol {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .pass { color: green; font-weight: bold; }
+    .fail { color: red; font-weight: bold; }
+  </style>
+
+  <!-- Experiment templates and text content -->
+  <script src="experiment_content.js"></script>
+
+  <!-- Shared utility functions (saving, preloading, environment checks, etc.) -->
+  <script src="utils.js"></script>
+
+  <!-- Main timeline builder and experiment runner -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!--
+    Optional mount point. If you want jsPsych to render here, set:
+      initJsPsych({ display_element: 'jspsych-target', ... })
+    in main.js.
+  -->
+  <div id="jspsych-target"></div>
+</body>
+</html>

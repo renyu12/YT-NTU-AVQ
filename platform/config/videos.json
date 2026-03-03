@@ -1,0 +1,23 @@
+{
+  "train_videos": [
+    {
+      "video_id": "train1",
+      "video_url": "https://d2rwx3piqff1n4.cloudfront.net/YTAVQA-10/id_Dtnm7wO4RrM.mp4",
+      "description": "This is a poor/fair-quality example.<br>There are no obvious distortions or severe defects in either the video or audio,<br>but the visual and audio clarity are both low, likely due to the age of the footage.<br>The image appears soft, and the audio lacks crispness.<br> While the comical sound effects are well matched with the performance.<br>(Without the video, the sounds may be considered noise)",
+      "e_all": [1.5, 3],
+      "e_v": [1.5, 3],
+      "e_a": [2, 3.5],
+      "e_av_weight": [0, 100]
+    }
+  ],
+  "experiment_videos": [
+    {
+      "video_id": "exp1",
+      "video_url": "https://d2rwx3piqff1n4.cloudfront.net/YTAVQA-11/id_0FAU1-8WJQA.mp4"
+    },
+    {
+      "video_id": "exp2",
+      "video_url": "https://d2rwx3piqff1n4.cloudfront.net/YTAVQA-20/id_HovbbXiYNjw.mp4"
+    }
+  ]
+}

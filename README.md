@@ -2,19 +2,20 @@
 
 This repository provides:
 
-1. **An online crowdsourcing platform** (based on [jsPsych](https://www.jspsych.org/)) for running subjective experiments with audio-visual stimuli.  
-2. **The YT-NTU-AVQ dataset**, the first crowdsourced Audio-Visual Quality Assessment (AVQA) dataset, built using this platform.  
+1. **A lightweight online experimental platform** (based on [jsPsych](https://www.jspsych.org/)) for collecting subjective quality ratings with audio-visual stimuli.  
+2. **The YT-NTU-AVQ dataset**, the first crowdsourced Audio-Visual Quality Assessment (AVQA) dataset, built using an internal research version of this platform.  
 
 The full dataset (~9GB) is released on Hugging Face:  
 👉 https://huggingface.co/datasets/ntu-avqa/YT-NTU-AVQ  
-This repository hosts the experimental platform and small demo samples for illustration.  
-The experimental platform will be released **coming soon**.
+This repository hosts small demo samples for illustration.  
+
+The open-source release of experiment platform provides a simplified and refactored implementation to support reproducibility and general subjective experiment design.
 
 ---
 
 ## 📂 Repository Structure
 
-- `platform/` – The jsPsych-based experimental platform (**coming soon**).  
+- `platform/` – The jsPsych-based experimental platform.  
 - `dataset/` – Dataset label file and A/V Sequence examples.  
 - `assets/` – Figures and visual materials (for documentation or illustration).  
 - `README.md` – Project description and usage guide.  
@@ -24,7 +25,7 @@ The experimental platform will be released **coming soon**.
 ## 🎬 Dataset
 
 **YT-NTU-AVQ** is a crowdsourced dataset for Audio-Visual Quality Assessment (AVQA).  
-It contains user-generated A/V sequence with subjective ratings along multiple dimensions:
+It contains user-generated A/V sequences with subjective ratings along multiple dimensions:
 
 with the following format:
 
@@ -61,21 +62,18 @@ Dynamic_100.mp4,3.361643835616438,3.146575342465753,3.375342465753425,48.1780821
 
 ## 🧪 Experimental Platform
 
-The **platform/** folder contains a template for running online subjective experiments with jsPsych.
+The **platform/** folder contains a configurable jsPsych-based template for conducting online subjective experiments with video stimuli.  
+It is adapted from the internal research version used in YT-NTU-AVQ dataset building and has been simplified and refactored for open-source release.  
+Originally designed for audio-visual quality assessment, the framework can be readily adapted to other perceptual quality evaluation tasks.  
 
 ### ✨ Features
-- Modular experiment design (pre-test, qualification test, formal test, post-survey).  
-- Multi-video input with subjective scoring (e.g., sliders, buttons).  
-- Flexible video/audio quality assessment tasks.  
-- Automatic logging of behavioral data (play/pause counts, total viewing time, etc.).  
+- Complete and configurable experiment workflow  
+- Environment & playback control  
+- Multi-dimensional subjective annotation  
+- Structured result export with behavioral logging (JSON / CSV, local or remote)  
 
 ### 🚀 How to Use
-1. Place experimental materials (e.g., videos) in `platform/static/videos/`.  
-2. Configure the experiment flow in `platform/config/`.  
-3. Open `index.html` in a browser to run the experiment.  
-4. Results will be saved as `.csv` or `.json` files for later analysis.  
-
-This platform can serve as a **template** for building your own online subjective experiments.
+Detailed platform usage and configuration instructions are provided in [platform/README.md](platform/README.md).  
 
 ---
 
@@ -89,10 +87,23 @@ This platform can serve as a **template** for building your own online subjectiv
 
 ## 📖 Citation
 
+If this dataset or experimental platform is useful for your research, please consider citing:  
+
 ICASSP 2026 paper:  
 **Scaling Audio-Visual Quality Assessment Dataset via Crowdsourcing**  
+arXiv: [Scaling Audio-Visual Quality Assessment Dataset via Crowdsourcing (arXiv 2602.22659)](https://arxiv.org/abs/2602.22659)
 
-Citation details will be added after the paper publication.  
+```
+@misc{yang2026scalingaudiovisualqualityassessment,
+      title={Scaling Audio-Visual Quality Assessment Dataset via Crowdsourcing}, 
+      author={Renyu Yang and Jian Jin and Lili Meng and Meiqin Liu and Yilin Wang and Balu Adsumilli and Weisi Lin},
+      year={2026},
+      eprint={2602.22659},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.22659}, 
+}
+``` 
 
 ---
 

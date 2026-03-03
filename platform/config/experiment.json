@@ -1,0 +1,31 @@
+{
+  "experiment_name": "AVQA Demo",
+  "task_id": "group1",
+  "show_progress_bar": true,
+  "auto_update_progress_bar": true,
+  "save_local_results": true,
+  "save_format": ["json"],
+  "remote_submit_url": "",
+  "timeline": {
+    "welcome": true,
+    "user_id_input": true,
+    "environment_advice": true,
+    "environment_check": true,
+    "consent": true,
+    "instruction": true,
+    "training": true,
+    "experiment": true,
+    "end_message": true
+  },
+  "environment_check_config": {
+    "min_physical_width": 1280,
+    "min_physical_height": 720,
+
+    "require_network": true,
+    "network_test_url": "https://d2rwx3piqff1n4.cloudfront.net/YTAVQA-10/id_FAMvRKbnDFE.mp4",
+    "network_timeout_ms": 5000,
+
+    "require_audio_output": false
+  },
+  "allow_skip_training": true
+}
